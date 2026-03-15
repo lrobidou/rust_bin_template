@@ -1,0 +1,13 @@
+[build]
+rustflags = ["-C", "target-cpu=native"]
+
+[profile.dev]
+incremental = true
+
+[profile.dev.package."*"]
+incremental = false
+
+[profile.release]
+codegen-units = 1
+panic = "abort"
+lto = "thin"
